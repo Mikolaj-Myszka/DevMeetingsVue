@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ greeting }}
+      <br/>
+      <br/>
+      <button v-on:click="addToList()">Add item to List</button>
+    </div>
+
+
+    <script>
+      const app = new Vue({
+          el: '#app',
+          data: {
+            greeting: 'shakalaka',
+            list: []
+          },
+          methods: {
+            addToList() {
+              this.list.push();
+            }
+          }
+      });
+    </script>
+  </body>
+</html>
