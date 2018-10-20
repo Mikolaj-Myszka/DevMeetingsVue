@@ -3,11 +3,13 @@
 
     {{ greeting }}
     <br/>
-    <input v-model="message" placeholder="edit me">
-    <p>Message is: {{ message }}</p>
+    <addProduct @add-product="addToList" />
     <br/>
+    <p>Show list: {{ list }}</p>
+    <!--
     <button v-on:click="addToList()">Add item to List</button>
     <p>Show list: {{ list }}</p>
+    -->
 
     <!--
     <img alt="Vue logo" src="./assets/logo.png">
@@ -18,23 +20,25 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import addProduct from './components/addProduct.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    addProduct
   },
 
   data() {
     return {
-    greeting: 'shakalaka',
-    list: [],
-    message: ''
-    }
+      greeting: 'shakalaka',
+      list: [],
+      message: ''
+      }
   },
   methods: {
-    addToList() {
-      this.list.push(this.message);
+    addToList(product) {
+      this.list.push(product);
     }
   }
 }
