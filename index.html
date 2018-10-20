@@ -9,8 +9,11 @@
     <div id="app">
       {{ greeting }}
       <br/>
+      <input v-model="message" placeholder="edit me">
+      <p>Message is: {{ message }}</p>
       <br/>
       <button v-on:click="addToList()">Add item to List</button>
+      <p>Show list: {{ list }}</p>
     </div>
 
 <!--dsd-->
@@ -19,11 +22,12 @@
           el: '#app',
           data: {
             greeting: 'shakalaka',
-            list: []
+            list: [],
+            message: ''
           },
           methods: {
             addToList() {
-              this.list.push();
+              this.list.push(this.message);
             }
           }
       });
